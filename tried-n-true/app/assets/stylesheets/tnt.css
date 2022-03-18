@@ -1,0 +1,30 @@
+body {
+  background-color: #dec284;
+}
+
+.navbar {
+  background-color: #cf694a;
+}
+
+.component-container {
+  min-width: 500px;
+  padding: 0px;
+}
+
+.outer-card {
+  background-color: #e8d3b4;  
+}
+
+.card-header,
+.card-footer {
+  background-color: #d4a78c;
+}
+
+.inner-card {
+  background-color: #fdf6ec;
+}
+
+.card {
+  border-color: #cf694a;
+  
+}

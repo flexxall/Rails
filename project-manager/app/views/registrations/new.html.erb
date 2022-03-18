@@ -1,0 +1,41 @@
+<div class="container text-center mx-auto mb-3 text-6xl text-indigo-700">
+  <span>Sign Up</span><br>
+</div>  
+
+<% if @user.errors.any? %>
+  <div class="container text-center mx-auto mb-3 w-1/3">
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+      <% @user.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<div class="container w-1/3 mx-auto text-md font-bold text-indigo-700">
+  <%= form_with model: @user, url: sign_up_path do |form| %>
+    <div class="mb-3">
+      <%= form.label :username %>
+      <%= form.text_field :username, placeholder: "Username", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :email %>
+      <%= form.text_field :email, placeholder: "email@example.com", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password %>
+      <%= form.password_field :password, placeholder: "Password", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, placeholder: "Password", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit class: "mx-2 my-2 bg-white transition duration-150 ease-in-out hover:bg-gray-100 hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-6 py-2 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-700" %>
+    </div>
+  <% end %>
+</div>

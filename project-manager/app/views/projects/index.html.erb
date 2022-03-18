@@ -1,0 +1,13 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+</div>
+<div class="container text-center mx-auto mb-3 text-6xl text-indigo-700">
+  <span>Projects</span><br>
+  <%= link_to "Home", root_path, class: "mx-2 my-2 bg-white transition duration-150 ease-in-out hover:bg-gray-100 hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-6 py-2 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-700" %>
+  <%= link_to 'New project', new_project_path, class: "mx-2 my-2 bg-white transition duration-150 ease-in-out hover:bg-gray-100 hover:text-indigo-600 rounded border border-indigo-700 text-indigo-700 px-6 py-2 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-indigo-700" %>
+  <div id="projects" class="min-w-full">
+    <%= render @projects %>
+  </div>
+</div>

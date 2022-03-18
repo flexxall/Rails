@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProjectManager</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%# <script src="https://cdn-tailwindcss.vercel.app/"></script> %>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              tomato: 'tomato',
+            },
+            
+          },
+        },
+      }
+    </script>
+  </head>
+
+  <body class="h-screen bg-no-repeat bg-gray-200 bg-gradient-to-b from-gray-500 to-gray-200">
+    <%= render partial: "shared/navbar" %>
+    <div class="container mx-auto">      
+      <%= render partial: "shared/flash" %>
+      <%= yield %>    
+    </div>
+  </body>
+</html>

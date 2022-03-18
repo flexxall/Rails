@@ -1,0 +1,32 @@
+<div id="<%= dom_id recipe %>">
+	
+  <div class="card shadow border-0">
+    
+    <div class="card-header text-center">
+      <%= recipe.title %>
+    </div>
+
+    <div class="card-body outer-card">
+      
+      <div>Description:</div>
+      <div class="card inner-card mb-3">
+        <%= recipe.description %>
+      </div>
+      
+      <% if action_name != "show" %>
+        <div class="d-flex align-items-end justify-content-between">
+          <%= link_to "View recipe", recipe, class: "btn btn-sm btn-outline-dark" %>
+          <div class="fw-light">Added By: <%= recipe.user.username %></div>
+        </div>
+      <% else %>
+      <div class="d-flex align-items-end justify-content-between">
+        <%= link_to "Edit", edit_recipe_path(recipe), class: "btn btn-sm btn-outline-dark" %>
+        <div class="fw-light">Added By: <%= recipe.user.username %></div>
+        <%= button_to "Destroy", @recipe, class: "btn btn-sm btn-outline-danger", method: :delete %>
+      </div>  
+      <% end %>
+    </div>
+
+  </div>
+
+</div>

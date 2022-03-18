@@ -1,0 +1,16 @@
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Edit this Recipe</h1>
+</div>
+<div id="recipes" class="row ">
+      
+    <div class="component-container mx-auto col-sm-5 pt-4">    
+      <div class="card-body">
+        <%= render @recipe %>
+      </div>   
+    </div>
+    
+    <div class="component-container col-5 px-3 mx-auto">
+      <%= render "form", recipe: @recipe %>
+    </div>    
+  
+</div>

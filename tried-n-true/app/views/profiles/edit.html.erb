@@ -1,0 +1,37 @@
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Edit Profile</h1>
+</div>
+
+<%= form_with model: Current.user, url: profile_path, data: { turbo: false } do |form| %>
+
+  <% if form.object.errors.any? %>
+    <div class="col-5 col-xs-4 mx-auto py-2">
+      <div class="alert alert-danger alert-dismissible fade show shadow text-center border-1 mb-3" role="alert">
+        <% form.object.errors.full_messages.each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>  
+
+  <div class="container col-4 mx-auto">
+    <div class="mb-3">
+      <%= form.label :username %>
+      <%= form.text_field :username, placeholder: "Username", class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password %>
+      <%= form.password_field :password, placeholder: "Password", class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password_confirmation %>
+      <%= form.password_field :password_confirmation, placeholder: "Password", class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit class: "shadow btn btn-warning" %>
+    </div>
+  </div>
+<% end %>

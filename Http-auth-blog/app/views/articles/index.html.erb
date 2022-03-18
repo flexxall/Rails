@@ -1,0 +1,20 @@
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Articles</h1>
+</div>
+<div>
+  Our blog has <%= Article.public_count %> articles and counting!
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @articles.each do |article| %>
+      <div class="col">
+        <div class="card p-2">
+          <% unless article.archived? %>
+            <%= link_to article.title, article %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div>
+  <%= link_to "New Article", new_article_path %>
+</div>

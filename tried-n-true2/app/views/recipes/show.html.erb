@@ -1,0 +1,22 @@
+<div class="container text-center mb-3 fs-1">
+  <span>Recipe Added</span>
+</div>
+
+<div class="row justify-content-center">
+      
+    <div class="col-sm-5">    
+      <div class="card-body">
+        <%= render @recipe %>        
+      </div>   
+    </div>    
+  
+</div>
+
+
+
+<div>
+  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
+  <%= link_to "Back to recipes", recipes_path %>
+
+  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+</div>

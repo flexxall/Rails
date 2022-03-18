@@ -1,0 +1,46 @@
+<%= form_with(model: recipe) do |f| %>
+  <% if recipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+
+      <ul>
+        <% recipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container col-4 mx-auto">
+    <div class="mb-3">
+      <%= f.label :title, style: "display: block" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :description, style: "display: block" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :directions, style: "display: block" %>
+      <%= f.text_area :directions, class: "form-control" %>
+    </div>
+
+    <% if current_user %>
+        <%# User ID:<%= current_user.id %>
+        <%# User Name: <%= current_user.username %>
+        <% f.hidden_field :user_id, value: current_user.id%>
+        <% f.hidden_field :username, value: current_user.username%>
+    <% end %>
+
+    <%# <div> %>
+      <%# <%= form.label :user_id, style: "display: block" %>
+      <%# <%= form.text_field :user_id %>
+    <%# </div> %>
+
+    <div class="mb-3">
+      <%= f.submit class: "btn btn-warning" %>
+    </div>
+  </div>  
+<% end %>

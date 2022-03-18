@@ -1,0 +1,28 @@
+<div id="<%= dom_id recipe %>">
+  <div class="card shadow border-0">
+		<div class="card-header text-center">
+      <%= recipe.title %>
+    </div>
+
+    <div class="card-body outer-card">
+      
+      <div>Description:</div>
+      <div class="card inner-card mb-2">
+        <%= recipe.description %>
+      </div>
+      
+      <div>Directions:</div>
+      <div class="card inner-card mb-2">
+        <%= recipe.directions %>
+      </div>
+
+      <%= link_to "View recipe", recipe, class: "btn btn-sm btn-outline-dark" %>
+      <strong>User:</strong>
+    <%= recipe.user_id %>
+    </div>
+    
+  <p>
+    
+  </p>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="container text-center mb-3 fs-1">
+  <span>Sign In</span>
+</div>  
+
+  <div class="container col-10 col-md-7 col-lg-4">
+    <%= form_with url: sign_in_path do |form| %>
+    
+    <div class="mb-3">
+      <%= form.label :email %>
+      <%= form.text_field :email, placeholder: "email@example.com", class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :password %>
+      <%= form.password_field :password, placeholder: "Password", class: "form-control"%>
+      <%= link_to "Forgot you  password ?", password_reset_path %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.submit "Sign In", class: "btn btn-warning" %>
+    </div>
+  </div>
+<% end %>

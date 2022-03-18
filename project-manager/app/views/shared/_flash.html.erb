@@ -1,0 +1,29 @@
+<% if flash[:notice] %>
+  <div class="flex place-content-center text-center mb-3 mt-4">
+    <div class="w-1/3 shadow bg-green-50 text-green-500 px-3 py-2 font-medium rounded-lg mt-3" roll="alert">
+      <%= flash[:notice] %>
+    </div>
+  </div>
+<% end %>
+
+<% if flash[:test] %>
+<% if project.errors.any? %>
+    <div id="error_explanation" class="shadow bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3" roll="alert">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="flex place-content-center text-center mb-3 mt-4">
+    <div class="w-1/3 shadow bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3" roll="alert">
+      <%= flash[:alert] %>
+    </div>
+  </div>
+<% end %>

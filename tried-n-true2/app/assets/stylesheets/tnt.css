@@ -1,0 +1,23 @@
+body {
+  background-color: #DEC284;
+}
+
+.navbar {
+  background-color: #CF694A;
+}
+
+.outer-card {
+  background-color: #E8D3B4;
+}
+
+.card-header, .card-footer{
+  background-color: #D4A78C;
+}
+
+.inner-card {
+  background-color: #fdf6ec;
+}
+
+.card {
+  border-color: #CF694A;
+}
